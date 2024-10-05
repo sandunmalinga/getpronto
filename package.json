@@ -10,3 +10,9 @@
     "chrome-aws-lambda": "^10.1.0"
   }
 }
+{
+  "engines": {
+    "node": "18.x",
+    "npm": "7.x"
+  }
+}
