@@ -1,11 +1,12 @@
 [build]
   command = "npm install --legacy-peer-deps"
-  publish = "public"
+  publish = "public"  # Replace this with your actual publish directory if it's different
 
 [functions]
-  directory = "funtions"
+  directory = "funtions"  # Define your functions directory
+  external_node_modules = ["chrome-aws-lambda", "puppeteer-core"]
 
-[[functions]]
-  path = "track"
-  memory = 1024
-  timeout = 30
+# No need for double brackets here. Instead, specify settings directly:
+[functions."track"]
+  memory = 1024  # Function-specific memory setting
+  timeout = 30   # Function-specific timeout setting
