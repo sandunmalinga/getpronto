@@ -8,6 +8,7 @@
     "puppeteer-core"
   ]
 
+# Define your function here
 [[functions]]
   path = "/track"
   memory = 1024
