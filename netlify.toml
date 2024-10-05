@@ -1,9 +1,8 @@
 [build]
   command = "npm install --legacy-peer-deps"
-  publish = "public"  # Adjust this if your actual publish directory is different
 
 [functions]
-  directory = "funtions"  # Use the correct folder name with the typo
+  directory = "funtions"  # Your function folder name
   external_node_modules = ["chrome-aws-lambda", "puppeteer-core"]
 
 # Function-specific settings for the track function
