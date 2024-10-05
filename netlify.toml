@@ -1,5 +1,6 @@
 [build]
       command = "npm install --legacy-peer-deps"
+      publish = "public"
 
 [functions]
   # Configure external Node.js modules for Puppeteer
