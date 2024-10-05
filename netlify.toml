@@ -3,7 +3,7 @@
   publish = "public"
 
 [functions]
-  directory = "functions"
+  directory = "funtions"
 
 [[functions]]
   path = "track"
