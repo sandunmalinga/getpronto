@@ -1,6 +1,5 @@
 [build]
-  functions = "functions"
-
+    command = "npm install --legacy-peer-deps && npm run build"
 [functions]
   # Configure external Node.js modules for Puppeteer
   external_node_modules = ["chrome-aws-lambda", "puppeteer-core"]
