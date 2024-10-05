@@ -12,3 +12,4 @@
 [functions.track]
   memory = 1024
   timeout = 30
+   NODE_VERSION = "18.x"
