@@ -11,16 +11,3 @@
     "npm": "7.x"
   }
 }
-{
-  "name": "puppeteer-tracker",
-  "version": "1.0.0",
-  "description": "A shipment tracking app with Puppeteer",
-  "dependencies": {
-    "puppeteer-core": "^21.0.0",
-    "chrome-aws-lambda": "^10.1.0"
-  },
-  "engines": {
-    "node": "18.x",
-    "npm": "7.x"
-  }
-}
