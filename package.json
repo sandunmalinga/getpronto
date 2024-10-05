@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "A shipment tracking app with Puppeteer",
   "dependencies": {
-    "puppeteer-core": "^10.1.0",
-    "chrome-aws-lambda": "^10.1.0"
+    "puppeteer-core": "^21.11.0",  // Using the latest version
+    "chrome-aws-lambda": "^10.1.0" // Keep this version for compatibility
   },
   "engines": {
     "node": "18.x",
     "npm": "7.x"
   }
-}
-"dependencies": {
-  "puppeteer-core": "21.11.0",
-  "chrome-aws-lambda": "10.1.0"
 }
