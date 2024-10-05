@@ -5,11 +5,10 @@
   # Configure external Node.js modules for Puppeteer
   external_node_modules = ["chrome-aws-lambda", "puppeteer-core"]
 
-  # Set custom settings for your function (optional)
+  # Use esbuild as the bundler
   node_bundler = "esbuild"
 
-  # Override timeout and memory at the function level if needed
-  [[functions]]
-  path = "track"
+# Override memory and timeout for the specific function "track"
+[functions.track]
   memory = 1024
   timeout = 30
