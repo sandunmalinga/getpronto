@@ -2,28 +2,13 @@
   "name": "puppeteer-tracker",
   "version": "1.0.0",
   "description": "A shipment tracking app with Puppeteer",
-  "main": "index.js", // Your main entry point
-  "scripts": {
-    "start": "netlify dev", // Adjust this if you have a different start script
-    "build": "npm run build" // Add your build command here if necessary
-  },
   "dependencies": {
-    "puppeteer": "^21.11.0",
+    "puppeteer": "^22.8.2",  // Updated to latest version
     "puppeteer-core": "^10.1.0",
     "chrome-aws-lambda": "^10.1.0"
   },
   "engines": {
     "node": "18.x",
-    "npm": "7.x"
-  },
-  "devDependencies": {
-    // Add any development dependencies if needed
-  },
-  "keywords": [
-    "puppeteer",
-    "tracking",
-    "shipment"
-  ],
-  "author": "Your Name",
-  "license": "MIT" // Adjust the license as necessary
+    "npm": ">=7.x"  // Allowing for npm version 7 and above
+  }
 }
