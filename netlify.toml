@@ -1,0 +1,8 @@
+[build]
+  functions = "functions"
+
+[functions]
+  # Define the maximum timeout and memory for Puppeteer
+  node_bundler = "esbuild"
+  timeout = 30
+  memory = 1024
