@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A shipment tracking app with Puppeteer",
   "dependencies": {
+    "puppeteer": "^21.11.0", // Add this line
     "puppeteer-core": "^10.1.0",
     "chrome-aws-lambda": "^10.1.0"
   },
