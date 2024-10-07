@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function trackShipment(trackingNumber) {
   const browser = await puppeteer.launch({
-    headless: false, // Set to false to open the browser
+    headless: true, // Set to false to open the browser
     args: ['--no-sandbox', '--disable-setuid-sandbox'], // For some environments
   });
   const page = await browser.newPage();
