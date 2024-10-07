@@ -2,11 +2,12 @@
   "name": "puppeteer-tracker",
   "version": "1.0.0",
   "description": "A shipment tracking app with Puppeteer",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
-    "puppeteer-core": "^21.0.0",
-    "chrome-aws-lambda": "^10.1.0"
+    "puppeteer-core": "^21.5.1",
+    "@sparticuz/chrome-aws-lambda": "^10.1.0" // Ensure this is present
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": ">=7.x"
   }
 }
