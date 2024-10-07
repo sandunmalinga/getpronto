@@ -1,22 +1,19 @@
-const puppeteer = require('puppeteer-core');
 const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 async function trackShipment(trackingNumber) {
-  const browser = await puppeteer.launch({
-    executablePath: await chromium.executablePath,
-    headless: true,
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-  });
-  const page = await browser.newPage();
-
+  let browser;
   try {
+    browser = await puppeteer.launch({
+      executablePath: await chromium.executablePath,
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      headless: chromium.headless,
+    });
+    const page = await browser.newPage();
+
     await page.goto('https://www.prontolanka.lk/', { waitUntil: 'networkidle2' });
-
-    // Enter the tracking number
     await page.type('#TextBox3', trackingNumber);
-
-    // Click the "Track" button
     await page.evaluate(() => {
       document.querySelector('#LinkButton1').click();
     });
@@ -35,7 +32,7 @@ async function trackShipment(trackingNumber) {
       body: JSON.stringify({ success: true, table: tableHTML }),
     };
   } catch (error) {
-    await browser.close();
+    if (browser) await browser.close();
     return {
       statusCode: 500,
       body: JSON.stringify({ success: false, message: 'Error during tracking', error: error.message }),
