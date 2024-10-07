@@ -40,7 +40,6 @@ async function trackShipment(trackingNumber) {
   }
 }
 
-// Export the handler for Netlify
 exports.handler = async (event) => {
   const trackingNumber = event.queryStringParameters.trackingNumber;
 
