@@ -1,30 +1,15 @@
-const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer');
 
-exports.handler = async (event, context) => {
-  const trackingNumber = event.queryStringParameters.trackingNumber;
+async function trackShipment(trackingNumber) {
+  const browser = await puppeteer.launch({
+    headless: false, // Set to false to open the browser
+    args: ['--no-sandbox', '--disable-setuid-sandbox'], // For some environments
+  });
+  const page = await browser.newPage();
 
-  // Ensure the trackingNumber is defined
-  if (!trackingNumber) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ success: false, message: 'Tracking number not provided' }),
-    };
-  }
-
-  let browser;
   try {
-    // Launch a headless browser
-    browser = await chromium.puppeteer.launch({
-      args: [...chromium.args],
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: true,
-    });
-
-    const page = await browser.newPage();
-
     // Navigate to the Pronto tracking page
-    await page.goto('https://www.prontolanka.lk/#Book-Your-Pickup', { waitUntil: 'networkidle2' });
+    await page.goto('https://www.prontolanka.lk/', { waitUntil: 'networkidle2' });
 
     // Enter the tracking number into #TextBox3
     await page.type('#TextBox3', trackingNumber);
@@ -46,19 +31,15 @@ exports.handler = async (event, context) => {
       return table ? table.outerHTML : null;
     });
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true, table: tableHTML }),
-    };
+    console.log({ success: true, table: tableHTML });
+    await browser.close();
   } catch (error) {
     console.error('Error while tracking shipment:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ success: false, message: 'Error during tracking' }),
-    };
-  } finally {
-    if (browser) {
-      await browser.close();
-    }
+    await browser.close();
   }
-};
+}
+
+// Hardcoded tracking number for local testing
+const trackingNumber = 'COD2542820';
+
+trackShipment(trackingNumber);
