@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
     const page = await browser.newPage();
 
     // Navigate to the Pronto tracking page
-    await page.goto('https://www.prontolanka.lk/', { waitUntil: 'networkidle2' });
+    await page.goto('https://www.prontolanka.lk/#Book-Your-Pickup', { waitUntil: 'networkidle2' });
 
     // Enter the tracking number into #TextBox3
     await page.type('#TextBox3', trackingNumber);
