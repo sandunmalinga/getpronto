@@ -7,7 +7,7 @@ async function trackShipment(trackingNumber) {
   try {
     // Launch Puppeteer with chrome-aws-lambda's version of Chromium
     browser = await puppeteer.launch({
-      args: chromium.args,
+      args:['--no-sandbox', '--disable-setuid-sandbox'],
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
