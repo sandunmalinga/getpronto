@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A shipment tracking app with Puppeteer",
   "dependencies": {
-    "puppeteer-core": "^10.1.0",
-    "chrome-aws-lambda": "^10.1.0"
+     "@sparticuz/chromium": "^119.0.2",
+    "puppeteer-core": "^21.5.1"
   },
   "engines": {
     "node": "18.x",
