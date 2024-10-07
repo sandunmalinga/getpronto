@@ -2,6 +2,7 @@
   command = "npm install --legacy-peer-deps"
 
 [functions]
+  node_bundler = "esbuild"
   directory = "funtions"  # Your function folder name
   external_node_modules = ["chrome-aws-lambda", "puppeteer-core"]
 
